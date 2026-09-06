@@ -1,5 +1,13 @@
 # ☁️ CloudVault — Digital Document Management System
 
+**Live demo:** https://client-iota-one-25.vercel.app  
+**API:** https://server-bay-nine-93.vercel.app  
+**Source code:** https://github.com/GKXYZ/digital-document-management-system-cloud
+
+The frontend and serverless API are deployed on Vercel. The API requires the
+runtime environment variables listed in `server/.env.example`; configure them
+in Vercel Project Settings and never commit them to this repository.
+
 **CloudVault** is a full-stack digital document management system designed to let users securely upload, organize, search, and manage their documents in the cloud. It features seamless integration with AWS S3 for storage and MongoDB Atlas for metadata.
 
 ---
