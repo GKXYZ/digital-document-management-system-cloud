@@ -1,0 +1,34 @@
+# Dependencies and package-manager artifacts
+**/node_modules/
+**/.pnp/
+**/.pnp.js
+
+# Build and coverage output
+**/build/
+**/dist/
+**/coverage/
+**/.nyc_output/
+
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and local runtime data
+*.log
+logs/
+uploads/
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
