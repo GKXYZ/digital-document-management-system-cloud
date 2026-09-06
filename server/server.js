@@ -14,12 +14,6 @@ validateEnv();
 
 const startCronJobs = require('./jobs/cronJobs');
 
-// Connect to database
-connectDB();
-
-// Initialize cron jobs
-startCronJobs();
-
 const app = express();
 
 // Passport config
@@ -109,8 +103,15 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`\n🚀 CloudVault Server running on port ${PORT}`);
-  console.log(`📡 Environment: ${process.env.NODE_ENV}`);
-  console.log(`🔗 http://localhost:${PORT}\n`);
-});
+if (process.env.VERCEL !== '1') {
+  connectDB();
+  startCronJobs();
+
+  app.listen(PORT, () => {
+    console.log(`\n🚀 CloudVault Server running on port ${PORT}`);
+    console.log(`📡 Environment: ${process.env.NODE_ENV}`);
+    console.log(`🔗 http://localhost:${PORT}\n`);
+  });
+}
+
+module.exports = { app, connectDB };
